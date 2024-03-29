@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Admission Landing Page</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-image: url('school1.jpg');
+           
+            
+        }
+
+        header {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 1em;
+            text-align: center;
+        }
+
+        nav {
+            background-color: gray;
+            padding: 0.5em;
+            text-align: center;
+        }
+
+        nav a {
+            color: black;
+            text-decoration: none;
+            margin: 0 2em;
+        }
+
+        section {
+            padding: 1em;
+            text-align: center;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 18px;
+            text-decoration: none;
+            color: red;
+            background-color: #28a745;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: #218838;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <h1>Welcome to Cambridge School Admissions</h1>
+        <p>Your Gateway to Quality Education</p>
+    </header>
+
+    <!-- Navigation Section -->
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#contact">Contact Us</a>
+        <a href="#admissions">Admissions</a>
+        <a href="#enquiry">Enquiry</a>
+        <a href="#library">Library</a>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home">
+        <h2>Welcome to Our Landing Page</h2>
+        <p>Explore the opportunities that await you at Cambridge School. Apply for admissions now!
+    <p>At Cambridge School, we pride ourselves on fostering a dynamic learning environment where students are encouraged to explore, innovate, and achieve their full potential.</p>
+    <p>Our School is driven by a team of dedicated and experienced educators who are passionate about shaping the future leaders of tomorrow.</p>
+    <p>With a focus on academic excellence, character development, and holistic growth, we strive to instill in our students a love for learning and a sense of social responsibility.</p>
+    
+        <a href="#admissions" class="cta-button">Apply Now</a>
+    </section>
+
+    <!-- Contact Us Section -->
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Have questions or need assistance with the admission process? Reach out to us!</p>
+        <form action="#" method="post">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" required><br>
+
+            <label for="email">Your Email:</label>
+            <input type="email" id="email" name="email" required><br>
+
+            <label for="message">Your Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea><br>
+
+            <button type="submit" class="cta-button">Submit</button>
+        </form>
+    </section>
+
+    <!-- Admissions Section -->
+    <section id="admissions">
+        <h2>Admission Details</h2>
+        <p>Apply now for the upcoming academic year. Limited seats available!</p>
+        <ul>
+            <li>Classes Offered: Kindergarten to 12th Grade</li>
+            <li>Application Deadline: june</li>
+            <li>Admission Test Date: july</li>
+            <li>Required Documents: previous year marks sheets,birth certificate </li>
+        </ul>
+        <a href="#enquiry" class="cta-button">Inquire Now</a>
+    </section>
+
+    <!-- Enquiry Section -->
+    <section id="enquiry">
+        <h2>Enquiry</h2>
+        <p>Interested in learning more about Cambridge School? Submit your enquiry and we'll get back to you!</p>
+        <form action="#" method="post">
+            <label for="enquiry-type">Enquiry Type:</label>
+            <select id="enquiry-type" name="enquiry-type" required>
+                <option value="general">General Inquiry</option>
+                <option value="admissions">Admissions</option>
+                <option value="programs">Programs</option>
+            </select><br>
+
+            <label for="enquiry-message">Your Message:</label>
+            <textarea id="enquiry-message" name="enquiry-message" rows="4" required></textarea><br>
+
+            <button type="submit" class="cta-button">Submit Enquiry</button>
+        </form>
+    </section>
+
+    <!-- Library Section -->
+    <section id="library">
+        <h2>Library</h2>
+        <p>Explore the wealth of knowledge in our school library. A hub for learning and discovery.</p>
+        <a href="#contact" class="cta-button">Visit Library</a>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2023 Cambridge School. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

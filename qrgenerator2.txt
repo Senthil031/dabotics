@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta data-n-head="ssr" data-hid="theme-color" name="theme-color" content="#7D93C8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="robots" content="index, archive" />
+    <script async src="https://arc.io/widget.min.js#oFrxivBp"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+    <title>MakeQRC</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: #8BC6EC;
+            background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
+        }
+        .wrapper {
+            height: 260px;
+            max-width: 410px;
+            border-radius: 7px;
+            padding: 16px 25px;
+            transition: height 0.2s ease;
+            background: rgba( 31, 31, 31, 0.35 );
+            box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+            backdrop-filter: blur( 6px );
+            -webkit-backdrop-filter: blur( 6px );
+            border-radius: 10px;
+            border: 1px solid rgba( 255, 255, 255, 0.18 );
+        }
+        .wrapper.active {
+            height: 530px;
+        }
+        header h1 {
+            font-size: 21px;
+            font-weight: 500;
+            color: #fff;
+        }
+        header p {
+            font-size: 16px;
+            color: #ffffff;
+            margin-top: 5px;
+        }
+        .wrapper .form {
+            margin: 20px 0 25px;
+        }
+        .form :where(input, button) {
+            width: 100%;
+            height: 55px;
+            border: none;
+            outline: none;
+            border-radius: 5px;
+            background: rgba( 0, 0, 0, 0.3 );
+            box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+            backdrop-filter: blur( 3.5px );
+            -webkit-backdrop-filter: blur( 3.5px );
+            border-radius: 10px;
+            border: 1px solid rgba( 255, 255, 255, 0.18 );
+        }
+        .form input {
+            font-size: 18px;
+            padding: 0 17px;
+            border: 1px solid rgb(255, 255, 255);
+            color: #ffffff;
+        }
+        .form button {
+            color: #fff;
+            cursor: pointer;
+            margin-top: 20px;
+            font-size: 17px;
+            background: #33a0e4;
+        }
+        .wrapper .qr-code {
+            border: 1px solid rgb(255, 255, 255);
+            padding: 33px 0;
+            display: flex;
+            border-radius: 5px;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+        }
+        .wrapper.active .qr-code {
+            opacity: 1;
+            pointer-events: auto;
+            transition: opacity 0.5s 0.05s ease;
+        }
+        .inputtext {
+            color: aliceblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <h1>QR Code Generator</h1>
+            <p>Paste a URL or enter text to create QR code</p>
+        </header>
+        <div class="form">
+            <input type="text" placeholder="Enter text or url" class="inputtext">
+            <button>Generate QR Code</button>
+        </div>
+        <div class="qr-code">
+            <img src="" alt="qr-code">
+        </div>
+    </div>
+    <script>
+        const wrapper = document.querySelector(".wrapper"),
+        qrInput = wrapper.querySelector(".form input"),
+        generateBtn = wrapper.querySelector(".form button"),
+        qrImg = wrapper.querySelector(".qr-code img");
+
+        generateBtn.addEventListener("click", () => {
+            let qrValue = qrInput.value;
+            if(!qrValue) return;
+            preValue = qrValue;
+            generateBtn.innerText = "Generating QR Code...";
+            qrImg.src = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${qrValue}`;
+            qrImg.addEventListener("load", () => {
+                wrapper.classList.add("active");
+                generateBtn.innerText = "Generate QR Code";
+            });
+        });
+
+        qrInput.addEventListener("keyup", () => {
+            if(!qrInput.value) {
+                wrapper.classList.remove("active");
+            }
+        });
+    </script>
+</body>
+</html>
